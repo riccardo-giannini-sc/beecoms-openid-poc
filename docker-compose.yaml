@@ -28,8 +28,12 @@ services:
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: password
-            MYSQL_DATABASE: mysql
-            MYSQL_USER: mysql
-            MYSQL_PASSWORD: password
+    adminer:
+        depends_on:
+            - db
+        image: adminer
+        restart: always
+        ports:
+            - 8084:8080
 volumes:
     db_data: {}

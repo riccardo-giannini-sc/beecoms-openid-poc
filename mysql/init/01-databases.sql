@@ -4,4 +4,6 @@ CREATE DATABASE IF NOT EXISTS `prm`;
 CREATE DATABASE IF NOT EXISTS `serverapp`;
 
 # grant privileges on these databases to mysql user
-GRANT ALL PRIVILEGES ON *.* TO 'mysql'@'%';
+CREATE USER 'laravel'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'laravel'@'%';
+FLUSH PRIVILEGES;

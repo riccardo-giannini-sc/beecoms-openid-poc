@@ -1,6 +1,6 @@
 FROM php:7.3-fpm
 
-RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl
+RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl git
 RUN docker-php-ext-install pdo mbstring
 RUN pecl install mcrypt-1.0.3
 RUN docker-php-ext-enable mcrypt
