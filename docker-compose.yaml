@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+    serverapp:
+        build: ./serverapp
+        ports:
+            - 8000:8000
+        volumes:
+            - ./serverapp:/app
+    layer:
+        build: ./layer
+        ports:
+            - 8001:8001
+        volumes:
+            - ./layer:/app
+    prm:
+        build: ./prm
+        ports:
+            - 8002:8002
+        restart: always
+        volumes:
+            - ./prm:/app
+    db:
+        image: mysql
+        volumes:
+            - db_data:/var/lib/mysql
+            - ./mysql/init:/docker-entrypoint-initdb.d
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: mysql
+            MYSQL_USER: mysql
+            MYSQL_PASSWORD: password
+volumes:
+    db_data: {}
