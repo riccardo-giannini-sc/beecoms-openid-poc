@@ -2,18 +2,24 @@ version: "3"
 
 services:
     serverapp:
+        depends_on:
+            - db
         build: ./serverapp
         ports:
             - 8000:8000
         volumes:
             - ./serverapp:/app
     layer:
+        depends_on:
+            - db
         build: ./layer
         ports:
             - 8001:8001
         volumes:
             - ./layer:/app
     prm:
+        depends_on:
+            - db
         build: ./prm
         ports:
             - 8002:8002
