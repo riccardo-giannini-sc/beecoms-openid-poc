@@ -13,4 +13,6 @@ RUN service apache2 restart
 WORKDIR /etc/apache2/sites-available
 RUN a2ensite openidserver.conf
 
+RUN chmod 777 ./php-openid/examples/server/openid
+
 EXPOSE 80
