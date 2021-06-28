@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+                <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+        <script src="js/search.js"></script>
+        <script defer src="js/searchIndex.js"></script>
+    </head>
+<body id="top">
+    <header class="phpdocumentor-header phpdocumentor-section">
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <label class="phpdocumentor-header__menu-icon" for="menu-button">
+        <i class="fas fa-bars"></i>
+    </label>
+    <section data-search-form class="phpdocumentor-search">
+    <label>
+        <span class="visually-hidden">Search for</span>
+        <svg class="phpdocumentor-search__icon" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="7.5" cy="7.5" r="6.5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12.4892" y1="12.2727" x2="19.1559" y2="18.9393" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+    </label>
+</section>
+
+    <nav class="phpdocumentor-topnav">
+    <ul class="phpdocumentor-topnav__menu">
+        </ul>
+</nav>
+</header>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <input class="phpdocumentor-sidebar__menu-button" type="checkbox" id="sidebar-button" name="sidebar-button" />
+<label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
+    Menu
+</label>
+<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+            </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/OpenID.html"><abbr title="\OpenID">OpenID</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/OpenID-Examples.html"><abbr title="\OpenID\Examples">Examples</abbr></a></li>
+                            </ul>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+            <li class="phpdocumentor-breadcrumb"><a href="packages/OpenID.html">OpenID</a></li>
+    </ul>
+
+    <article class="phpdocumentor-element -class">
+        <h2 class="phpdocumentor-content__title">
+    Auth_OpenID_AuthRequest
+
+    
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/OpenID.html">OpenID</a></li>
+                            </ul>
+        </div>
+    
+    
+    </h2>
+
+        <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1848</span>
+</aside>
+
+            <p class="phpdocumentor-summary">This class represents an authentication request from a consumer to
+an OpenID server.</p>
+
+    <section class="phpdocumentor-description"></section>
+
+
+
+
+
+
+
+
+<h3 id="toc">
+    Table of Contents
+    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+                <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#property__anonymous">$_anonymous</a>
+    <span>
+                &nbsp;: bool            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#property_assoc">$assoc</a>
+    <span>
+                &nbsp;: <a href="classes/Auth-OpenID-Association.html"><abbr title="\Auth_OpenID_Association">Auth_OpenID_Association</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#property_endpoint">$endpoint</a>
+    <span>
+                &nbsp;: <a href="classes/Auth-OpenID-ServiceEndpoint.html"><abbr title="\Auth_OpenID_ServiceEndpoint">Auth_OpenID_ServiceEndpoint</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#property_message">$message</a>
+    <span>
+                &nbsp;: <a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#property_return_to_args">$return_to_args</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method___construct">__construct()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Initialize an authentication request with the specified token,
+association, and endpoint.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_addExtension">addExtension()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Add an extension to this checkid request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_addExtensionArg">addExtensionArg()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|bool|null|string    </span>
+</dt>
+<dd>Add an extension argument to this OpenID authentication
+request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_formMarkup">formMarkup()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|<a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|string    </span>
+</dt>
+<dd>Get html for a form to submit this request to the IDP.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_getMessage">getMessage()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|<a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>    </span>
+</dt>
+<dd>Produce a {@link Auth_OpenID_Message} representing this
+request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_htmlMarkup">htmlMarkup()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|<a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|string    </span>
+</dt>
+<dd>Get a complete html document that will autosubmit the request
+to the IDP.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_redirectURL">redirectURL()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_setAnonymous">setAnonymous()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Set whether this request should be made anonymously. If a
+request is anonymous, the identifier will not be sent in the
+request. This is only useful if you are making another kind of
+request with an extension in this request.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-AuthRequest.html#method_shouldSendRedirect">shouldSendRedirect()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd></dd>
+
+        </dl>
+
+
+
+        
+
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/Auth-OpenID-AuthRequest.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property__anonymous">
+        $_anonymous
+        <a href="classes/Auth-OpenID-AuthRequest.html#property__anonymous" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1863</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">bool</span>
+    <span class="phpdocumentor-signature__name">$_anonymous</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_assoc">
+        $assoc
+        <a href="classes/Auth-OpenID-AuthRequest.html#property_assoc" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1851</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Auth-OpenID-Association.html"><abbr title="\Auth_OpenID_Association">Auth_OpenID_Association</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$assoc</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_endpoint">
+        $endpoint
+        <a href="classes/Auth-OpenID-AuthRequest.html#property_endpoint" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1854</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Auth-OpenID-ServiceEndpoint.html"><abbr title="\Auth_OpenID_ServiceEndpoint">Auth_OpenID_ServiceEndpoint</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$endpoint</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_message">
+        $message
+        <a href="classes/Auth-OpenID-AuthRequest.html#property_message" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1860</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$message</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_return_to_args">
+        $return_to_args
+        <a href="classes/Auth-OpenID-AuthRequest.html#property_return_to_args" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1857</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$return_to_args</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+            </section>
+
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="classes/Auth-OpenID-AuthRequest.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1876</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Initialize an authentication request with the specified token,
+association, and endpoint.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-ServiceEndpoint.html"><abbr title="\Auth_OpenID_ServiceEndpoint">Auth_OpenID_ServiceEndpoint</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoint</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-Association.html"><abbr title="\Auth_OpenID_Association">Auth_OpenID_Association</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$assoc</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>Users of this library should not create instances of this
+class.  Instances of this class are created by the library when
+needed.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$endpoint</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-ServiceEndpoint.html"><abbr title="\Auth_OpenID_ServiceEndpoint">Auth_OpenID_ServiceEndpoint</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$assoc</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-Association.html"><abbr title="\Auth_OpenID_Association">Auth_OpenID_Association</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addExtension">
+        addExtension()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_addExtension" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1891</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add an extension to this checkid request.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">addExtension</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-Extension.html"><abbr title="\Auth_OpenID_Extension">Auth_OpenID_Extension</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$extension_request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$extension_request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-Extension.html"><abbr title="\Auth_OpenID_Extension">Auth_OpenID_Extension</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An object that implements the extension
+request interface for adding arguments to an OpenID message.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_addExtensionArg">
+        addExtensionArg()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_addExtensionArg" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1917</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Add an extension argument to this OpenID authentication
+request.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">addExtensionArg</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$namespace</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$key</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|bool|null|string</span></code>
+
+        <section class="phpdocumentor-description"><p>Use caution when adding arguments, because they will be
+URL-escaped and appended to the redirect URL, which can easily
+get quite long.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$namespace</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The namespace for the extension. For
+example, the simple registration extension uses the namespace
+'sreg'.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$key</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The key within the extension namespace. For
+example, the nickname field in the simple registration
+extension's key is 'nickname'.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The value to provide to the server for
+this argument.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|bool|null|string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_formMarkup">
+        formMarkup()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_formMarkup" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2066</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get html for a form to submit this request to the IDP.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">formMarkup</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$realm</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$return_to</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$immediate</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">null|array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$form_tag_attrs</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|<a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|string</span></code>
+
+        <section class="phpdocumentor-description"><p>form_tag_attrs: An array of attributes to be added to the form
+tag. 'accept-charset' and 'enctype' have defaults that can be
+overridden. If a value is supplied for 'action' or 'method', it
+will be replaced.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$realm</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$return_to</span>
+                : <span class="phpdocumentor-signature__argument__return-type">null|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$immediate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$form_tag_attrs</span>
+                : <span class="phpdocumentor-signature__argument__return-type">null|array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|<a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getMessage">
+        getMessage()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_getMessage" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1966</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Produce a {@link Auth_OpenID_Message} representing this
+request.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getMessage</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$realm</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$return_to</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$immediate</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|<a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$realm</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The URL (or URL pattern) that identifies
+your web site to the user when she is authorizing it.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$return_to</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The URL that the OpenID provider will
+send the user back to after attempting to verify her identity.</p>
+<p>Not specifying a return_to URL means that the user will not be
+returned to the site issuing the request upon its completion.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$immediate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>If true, the OpenID provider is to send
+back a response immediately, useful for behind-the-scenes
+authentication attempts.  Otherwise the OpenID provider may
+engage the user before providing a response.  This is the
+default case, as the user may need to provide credentials or
+approve the request before a positive response can be sent.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|<a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_htmlMarkup">
+        htmlMarkup()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_htmlMarkup" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2090</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Get a complete html document that will autosubmit the request
+to the IDP.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">htmlMarkup</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$realm</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$return_to</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$immediate</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$form_tag_attrs</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|<a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|string</span></code>
+
+        <section class="phpdocumentor-description"><p>Wraps formMarkup.  See the documentation for that function.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$realm</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$return_to</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$immediate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$form_tag_attrs</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>|<a href="classes/Auth-OpenID-Message.html"><abbr title="\Auth_OpenID_Message">Auth_OpenID_Message</abbr></a>|string</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_redirectURL">
+        redirectURL()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_redirectURL" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2040</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">redirectURL</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$realm</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$return_to</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$immediate</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$realm</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$return_to</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$immediate</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setAnonymous">
+        setAnonymous()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_setAnonymous" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">1934</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Set whether this request should be made anonymously. If a
+request is anonymous, the identifier will not be sent in the
+request. This is only useful if you are making another kind of
+request with an extension in this request.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">setAnonymous</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$is_anonymous</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"><p>Anonymous requests are not allowed when the request is made
+with OpenID 1.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$is_anonymous</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_shouldSendRedirect">
+        shouldSendRedirect()
+        <a href="classes/Auth-OpenID-AuthRequest.html#method_shouldSendRedirect" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">2102</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">shouldSendRedirect</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+            </section>
+
+    </article>
+                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+    <section class="phpdocumentor-search-results__dialog">
+        <header class="phpdocumentor-search-results__header">
+            <h2 class="phpdocumentor-search-results__title">Search results</h2>
+            <button class="phpdocumentor-search-results__close"><i class="fas fa-times"></i></button>
+        </header>
+        <section class="phpdocumentor-search-results__body">
+            <ul class="phpdocumentor-search-results__entries"></ul>
+        </section>
+    </section>
+</section>
+            </div>
+        </div>
+        <a href="classes/Auth-OpenID-AuthRequest.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <script>
+        cssVars({});
+    </script>
+</body>
+</html>

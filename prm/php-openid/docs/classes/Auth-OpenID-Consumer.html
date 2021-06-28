@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+                <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+        <script src="js/search.js"></script>
+        <script defer src="js/searchIndex.js"></script>
+    </head>
+<body id="top">
+    <header class="phpdocumentor-header phpdocumentor-section">
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <label class="phpdocumentor-header__menu-icon" for="menu-button">
+        <i class="fas fa-bars"></i>
+    </label>
+    <section data-search-form class="phpdocumentor-search">
+    <label>
+        <span class="visually-hidden">Search for</span>
+        <svg class="phpdocumentor-search__icon" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="7.5" cy="7.5" r="6.5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12.4892" y1="12.2727" x2="19.1559" y2="18.9393" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+    </label>
+</section>
+
+    <nav class="phpdocumentor-topnav">
+    <ul class="phpdocumentor-topnav__menu">
+        </ul>
+</nav>
+</header>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <input class="phpdocumentor-sidebar__menu-button" type="checkbox" id="sidebar-button" name="sidebar-button" />
+<label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
+    Menu
+</label>
+<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+            </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/OpenID.html"><abbr title="\OpenID">OpenID</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/OpenID-Examples.html"><abbr title="\OpenID\Examples">Examples</abbr></a></li>
+                            </ul>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+            <li class="phpdocumentor-breadcrumb"><a href="packages/OpenID.html">OpenID</a></li>
+    </ul>
+
+    <article class="phpdocumentor-element -class">
+        <h2 class="phpdocumentor-content__title">
+    Auth_OpenID_Consumer
+
+    
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/OpenID.html">OpenID</a></li>
+                            </ul>
+        </div>
+    
+    
+    </h2>
+
+        <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">215</span>
+</aside>
+
+            <p class="phpdocumentor-summary">An OpenID consumer implementation that performs discovery and does
+session management.  See the Consumer.php file documentation for
+more information.</p>
+
+    <section class="phpdocumentor-description"></section>
+
+
+
+
+
+
+
+
+<h3 id="toc">
+    Table of Contents
+    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+                <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-Consumer.html#property_consumer">$consumer</a>
+    <span>
+                &nbsp;: <a href="classes/Auth-OpenID-GenericConsumer.html"><abbr title="\Auth_OpenID_GenericConsumer">Auth_OpenID_GenericConsumer</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a href="classes/Auth-OpenID-Consumer.html#property_session">$session</a>
+    <span>
+                &nbsp;: <a href="classes/Auth-Yadis-PHPSession.html"><abbr title="\Auth_Yadis_PHPSession">Auth_Yadis_PHPSession</abbr></a>            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Auth-OpenID-Consumer.html#property__token_key">$_token_key</a>
+    <span>
+                &nbsp;: string            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Auth-OpenID-Consumer.html#property__token_suffix">$_token_suffix</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Auth-OpenID-Consumer.html#property_discoverMethod">$discoverMethod</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/Auth-OpenID-Consumer.html#property_session_key_prefix">$session_key_prefix</a>
+    <span>
+                &nbsp;: mixed            </span>
+</dt>
+<dd></dd>
+
+                <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-Consumer.html#method___construct">__construct()</a>
+    <span>
+                        &nbsp;: mixed    </span>
+</dt>
+<dd>Initialize a Consumer instance.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-Consumer.html#method_begin">begin()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-AuthRequest.html"><abbr title="\Auth_OpenID_AuthRequest">Auth_OpenID_AuthRequest</abbr></a>    </span>
+</dt>
+<dd>Start the OpenID authentication process. See steps 1-2 in the
+overview at the top of this file.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-Consumer.html#method_beginWithoutDiscovery">beginWithoutDiscovery()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-AuthRequest.html"><abbr title="\Auth_OpenID_AuthRequest">Auth_OpenID_AuthRequest</abbr></a>|<a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a>    </span>
+</dt>
+<dd>Start OpenID verification without doing OpenID server
+discovery. This method is used internally by Consumer.begin
+after discovery is performed, and exists to provide an
+interface for library users needing to perform their own
+discovery.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-Consumer.html#method_complete">complete()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-OpenID-ConsumerResponse.html"><abbr title="\Auth_OpenID_ConsumerResponse">Auth_OpenID_ConsumerResponse</abbr></a>    </span>
+</dt>
+<dd>Called to interpret the server&#039;s response to an OpenID
+request. It is called in step 4 of the flow described in the
+consumer overview.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Auth-OpenID-Consumer.html#method_getDiscoveryObject">getDiscoveryObject()</a>
+    <span>
+                        &nbsp;: <a href="classes/Auth-Yadis-Discovery.html"><abbr title="\Auth_Yadis_Discovery">Auth_Yadis_Discovery</abbr></a>    </span>
+</dt>
+<dd>Used in testing to define the discovery mechanism.</dd>
+
+        </dl>
+
+
+
+        
+
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/Auth-OpenID-Consumer.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_consumer">
+        $consumer
+        <a href="classes/Auth-OpenID-Consumer.html#property_consumer" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">218</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Auth-OpenID-GenericConsumer.html"><abbr title="\Auth_OpenID_GenericConsumer">Auth_OpenID_GenericConsumer</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$consumer</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_session">
+        $session
+        <a href="classes/Auth-OpenID-Consumer.html#property_session" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">221</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Auth-Yadis-PHPSession.html"><abbr title="\Auth_Yadis_PHPSession">Auth_Yadis_PHPSession</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$session</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property__token_key">
+        $_token_key
+        <a href="classes/Auth-OpenID-Consumer.html#property__token_key" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">230</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$_token_key</span>
+    </code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property__token_suffix">
+        $_token_suffix
+        <a href="classes/Auth-OpenID-Consumer.html#property__token_suffix" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">227</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$_token_suffix</span>
+     = <span class="phpdocumentor-signature__default-value">&quot;last_token&quot;</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_discoverMethod">
+        $discoverMethod
+        <a href="classes/Auth-OpenID-Consumer.html#property_discoverMethod" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">223</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$discoverMethod</span>
+     = <span class="phpdocumentor-signature__default-value">&#039;Auth_OpenID_discover&#039;</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_session_key_prefix">
+        $session_key_prefix
+        <a href="classes/Auth-OpenID-Consumer.html#property_session_key_prefix" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">225</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">$session_key_prefix</span>
+     = <span class="phpdocumentor-signature__default-value">&quot;_openid_consumer_&quot;</span></code>
+
+    
+    
+
+</article>
+            </section>
+
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="classes/Auth-OpenID-Consumer.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Auth-OpenID-Consumer.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">261</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Initialize a Consumer instance.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-OpenIDStore.html"><abbr title="\Auth_OpenID_OpenIDStore">Auth_OpenID_OpenIDStore</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$store</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$consumer_cls</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+        <section class="phpdocumentor-description"><p>You should create a new instance of the Consumer object with
+every HTTP request that handles OpenID transactions.</p>
+</section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$store</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-OpenIDStore.html"><abbr title="\Auth_OpenID_OpenIDStore">Auth_OpenID_OpenIDStore</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>This must be an object
+that implements the interface in <a href="Auth_OpenID_OpenIDStore"></a>.  Several concrete implementations are
+provided, to cover most common use cases.  For stores backed by
+MySQL, PostgreSQL, or SQLite, see the <a href="Auth_OpenID_SQLStore"></a> class and its sublcasses.  For a
+filesystem-backed store, see the <a href="Auth_OpenID_FileStore"></a>
+module.  As a last resort, if it isn't possible for the server
+to store state at all, an instance of <a href="Auth_OpenID_DumbStore"></a> can be used.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$session</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An object which implements the interface
+of the <a href="Auth_Yadis_PHPSession"></a> class.  Particularly, this
+object is expected to have these methods: get($key), set($key),
+$value), and del($key).  This defaults to a session object
+which wraps PHP's native session machinery.  You should only
+need to pass something here if you have your own sessioning
+implementation.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$consumer_cls</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The name of the class to instantiate
+when creating the internal consumer object.  This is used for
+testing.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">mixed</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_begin">
+        begin()
+        <a href="classes/Auth-OpenID-Consumer.html#method_begin" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">314</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Start the OpenID authentication process. See steps 1-2 in the
+overview at the top of this file.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">begin</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user_url</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$anonymous</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-AuthRequest.html"><abbr title="\Auth_OpenID_AuthRequest">Auth_OpenID_AuthRequest</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$user_url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Identity URL given by the user. This
+method performs a textual transformation of the URL to try and
+make sure it is normalized. For example, a user_url of
+example.com will be normalized to http://example.com/
+normalizing and resolving any redirects the server might issue.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$anonymous</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>True if the OpenID request is to be sent
+to the server without any identifier information.  Use this
+when you want to transport data but don't want to do OpenID
+authentication with identifiers.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-AuthRequest.html"><abbr title="\Auth_OpenID_AuthRequest">Auth_OpenID_AuthRequest</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>$auth_request An object
+containing the discovered information will be returned, with a
+method for building a redirect URL to the server, as described
+in step 3 of the overview. This object may also be used to add
+extension arguments to the request, using its 'addExtensionArg'
+method.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_beginWithoutDiscovery">
+        beginWithoutDiscovery()
+        <a href="classes/Auth-OpenID-Consumer.html#method_beginWithoutDiscovery" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">374</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Start OpenID verification without doing OpenID server
+discovery. This method is used internally by Consumer.begin
+after discovery is performed, and exists to provide an
+interface for library users needing to perform their own
+discovery.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">beginWithoutDiscovery</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-ServiceEndpoint.html"><abbr title="\Auth_OpenID_ServiceEndpoint">Auth_OpenID_ServiceEndpoint</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$endpoint</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$anonymous</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">false</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-AuthRequest.html"><abbr title="\Auth_OpenID_AuthRequest">Auth_OpenID_AuthRequest</abbr></a>|<a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$endpoint</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-OpenID-ServiceEndpoint.html"><abbr title="\Auth_OpenID_ServiceEndpoint">Auth_OpenID_ServiceEndpoint</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>an OpenID service
+endpoint descriptor.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$anonymous</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">false</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Set to true if you want to perform OpenID
+without identifiers.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-AuthRequest.html"><abbr title="\Auth_OpenID_AuthRequest">Auth_OpenID_AuthRequest</abbr></a>|<a href="classes/Auth-OpenID-FailureResponse.html"><abbr title="\Auth_OpenID_FailureResponse">Auth_OpenID_FailureResponse</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>$auth_request An OpenID
+authentication request object.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_complete">
+        complete()
+        <a href="classes/Auth-OpenID-Consumer.html#method_complete" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">411</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Called to interpret the server&#039;s response to an OpenID
+request. It is called in step 4 of the flow described in the
+consumer overview.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">complete</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$current_url</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$query</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-ConsumerResponse.html"><abbr title="\Auth_OpenID_ConsumerResponse">Auth_OpenID_ConsumerResponse</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$current_url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The URL used to invoke the application.
+Extract the URL from your application's web
+request framework and specify it here to have it checked
+against the openid.current_url value in the response.  If
+the current_url URL check fails, the status of the
+completion will be FAILURE.</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$query</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>An array of the query parameters (key =&gt;
+value pairs) for this HTTP request.  Defaults to null.  If
+null, the GET or POST data are automatically gotten from the
+PHP environment.  It is only useful to override $query for
+testing.</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-OpenID-ConsumerResponse.html"><abbr title="\Auth_OpenID_ConsumerResponse">Auth_OpenID_ConsumerResponse</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>$response A instance of an
+Auth_OpenID_ConsumerResponse subclass. The type of response is
+indicated by the status attribute, which will be one of
+SUCCESS, CANCEL, FAILURE, or SETUP_NEEDED.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDiscoveryObject">
+        getDiscoveryObject()
+        <a href="classes/Auth-OpenID-Consumer.html#method_getDiscoveryObject" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Consumer.php"><a href="files/auth-openid-consumer.html"><abbr title="Auth/OpenID/Consumer.php">Consumer.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">287</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Used in testing to define the discovery mechanism.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getDiscoveryObject</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-Yadis-PHPSession.html"><abbr title="\Auth_Yadis_PHPSession">Auth_Yadis_PHPSession</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$openid_url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$session_key_prefix</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Auth-Yadis-Discovery.html"><abbr title="\Auth_Yadis_Discovery">Auth_Yadis_Discovery</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$session</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Auth-Yadis-PHPSession.html"><abbr title="\Auth_Yadis_PHPSession">Auth_Yadis_PHPSession</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$openid_url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$session_key_prefix</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">access</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>private</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Auth-Yadis-Discovery.html"><abbr title="\Auth_Yadis_Discovery">Auth_Yadis_Discovery</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+            </section>
+
+    </article>
+                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+    <section class="phpdocumentor-search-results__dialog">
+        <header class="phpdocumentor-search-results__header">
+            <h2 class="phpdocumentor-search-results__title">Search results</h2>
+            <button class="phpdocumentor-search-results__close"><i class="fas fa-times"></i></button>
+        </header>
+        <section class="phpdocumentor-search-results__body">
+            <ul class="phpdocumentor-search-results__entries"></ul>
+        </section>
+    </section>
+</section>
+            </div>
+        </div>
+        <a href="classes/Auth-OpenID-Consumer.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <script>
+        cssVars({});
+    </script>
+</body>
+</html>

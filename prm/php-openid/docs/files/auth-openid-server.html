@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="../">
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+                <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
+        <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
+        <script src="js/search.js"></script>
+        <script defer src="js/searchIndex.js"></script>
+    </head>
+<body id="top">
+    <header class="phpdocumentor-header phpdocumentor-section">
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
+    <label class="phpdocumentor-header__menu-icon" for="menu-button">
+        <i class="fas fa-bars"></i>
+    </label>
+    <section data-search-form class="phpdocumentor-search">
+    <label>
+        <span class="visually-hidden">Search for</span>
+        <svg class="phpdocumentor-search__icon" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="7.5" cy="7.5" r="6.5" stroke="currentColor" stroke-width="2"/>
+            <line x1="12.4892" y1="12.2727" x2="19.1559" y2="18.9393" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <input type="search" class="phpdocumentor-field phpdocumentor-search__field" placeholder="Loading .." disabled />
+    </label>
+</section>
+
+    <nav class="phpdocumentor-topnav">
+    <ul class="phpdocumentor-topnav__menu">
+        </ul>
+</nav>
+</header>
+
+    <main class="phpdocumentor">
+        <div class="phpdocumentor-section">
+            <input class="phpdocumentor-sidebar__menu-button" type="checkbox" id="sidebar-button" name="sidebar-button" />
+<label class="phpdocumentor-sidebar__menu-icon" for="sidebar-button">
+    Menu
+</label>
+<aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
+            </section>
+
+        <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Packages</h2>
+                    <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/Default.html"><abbr title="\Default">Default</abbr></a></h3>
+                                <h3 class="phpdocumentor-sidebar__root-package"><a href="packages/OpenID.html"><abbr title="\OpenID">OpenID</abbr></a></h3>
+                        <ul class="phpdocumentor-list">
+                                    <li><a href="packages/OpenID-Examples.html"><abbr title="\OpenID\Examples">Examples</abbr></a></li>
+                            </ul>
+                        </section>
+    
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Reports</h2>
+                <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/deprecated.html">Deprecated</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/errors.html">Errors</a></h3>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="reports/markers.html">Markers</a></h3>
+    </section>
+
+    <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header">Indices</h2>
+        <h3 class="phpdocumentor-sidebar__root-package"><a href="indices/files.html">Files</a></h3>
+    </section>
+</aside>
+
+            <div class="phpdocumentor-column -eight phpdocumentor-content">
+                    <ul class="phpdocumentor-breadcrumbs">
+            <li class="phpdocumentor-breadcrumb"><a href="packages/OpenID.html">OpenID</a></li>
+    </ul>
+
+    <article class="phpdocumentor-element -file">
+        <h2 class="phpdocumentor-content__title">Server.php</h2>
+
+        
+
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+    
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-ServerError.html"><abbr title="\Auth_OpenID_ServerError">Auth_OpenID_ServerError</abbr></a></dt>
+        <dd>An error class which gets instantiated and returned whenever an
+OpenID protocol error occurs.  Be prepared to use this in place of
+an ordinary server response.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-NoReturnToError.html"><abbr title="\Auth_OpenID_NoReturnToError">Auth_OpenID_NoReturnToError</abbr></a></dt>
+        <dd>Error returned by the server code when a return_to is absent from a
+request.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-MalformedReturnURL.html"><abbr title="\Auth_OpenID_MalformedReturnURL">Auth_OpenID_MalformedReturnURL</abbr></a></dt>
+        <dd>An error indicating that the return_to URL is malformed.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-MalformedTrustRoot.html"><abbr title="\Auth_OpenID_MalformedTrustRoot">Auth_OpenID_MalformedTrustRoot</abbr></a></dt>
+        <dd>This error is returned when the trust_root value is malformed.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-Request.html"><abbr title="\Auth_OpenID_Request">Auth_OpenID_Request</abbr></a></dt>
+        <dd>The base class for all server request classes.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-CheckAuthRequest.html"><abbr title="\Auth_OpenID_CheckAuthRequest">Auth_OpenID_CheckAuthRequest</abbr></a></dt>
+        <dd>A request to verify the validity of a previous response.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-PlainTextServerSession.html"><abbr title="\Auth_OpenID_PlainTextServerSession">Auth_OpenID_PlainTextServerSession</abbr></a></dt>
+        <dd>A class implementing plaintext server sessions.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-DiffieHellmanSHA1ServerSession.html"><abbr title="\Auth_OpenID_DiffieHellmanSHA1ServerSession">Auth_OpenID_DiffieHellmanSHA1ServerSession</abbr></a></dt>
+        <dd>A class implementing DH-SHA1 server sessions.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-DiffieHellmanSHA256ServerSession.html"><abbr title="\Auth_OpenID_DiffieHellmanSHA256ServerSession">Auth_OpenID_DiffieHellmanSHA256ServerSession</abbr></a></dt>
+        <dd>A class implementing DH-SHA256 server sessions.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-AssociateRequest.html"><abbr title="\Auth_OpenID_AssociateRequest">Auth_OpenID_AssociateRequest</abbr></a></dt>
+        <dd>A request to associate with the server.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-CheckIDRequest.html"><abbr title="\Auth_OpenID_CheckIDRequest">Auth_OpenID_CheckIDRequest</abbr></a></dt>
+        <dd>A request to confirm the identity of a user.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-ServerResponse.html"><abbr title="\Auth_OpenID_ServerResponse">Auth_OpenID_ServerResponse</abbr></a></dt>
+        <dd>This class encapsulates the response to an OpenID server request.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-WebResponse.html"><abbr title="\Auth_OpenID_WebResponse">Auth_OpenID_WebResponse</abbr></a></dt>
+        <dd>A web-capable response object which you can use to generate a
+user-agent response.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-Signatory.html"><abbr title="\Auth_OpenID_Signatory">Auth_OpenID_Signatory</abbr></a></dt>
+        <dd>Responsible for the signature of query data and the verification of
+OpenID signature values.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-Encoder.html"><abbr title="\Auth_OpenID_Encoder">Auth_OpenID_Encoder</abbr></a></dt>
+        <dd>Encode an {@link Auth_OpenID_ServerResponse} to an
+{@link Auth_OpenID_WebResponse}.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-SigningEncoder.html"><abbr title="\Auth_OpenID_SigningEncoder">Auth_OpenID_SigningEncoder</abbr></a></dt>
+        <dd>An encoder which also takes care of signing fields when required.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-Decoder.html"><abbr title="\Auth_OpenID_Decoder">Auth_OpenID_Decoder</abbr></a></dt>
+        <dd>Decode an incoming query into an Auth_OpenID_Request.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-EncodingError.html"><abbr title="\Auth_OpenID_EncodingError">Auth_OpenID_EncodingError</abbr></a></dt>
+        <dd>An error that indicates an encoding problem occurred.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-AlreadySigned.html"><abbr title="\Auth_OpenID_AlreadySigned">Auth_OpenID_AlreadySigned</abbr></a></dt>
+        <dd>An error that indicates that a response was already signed.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-UntrustedReturnURL.html"><abbr title="\Auth_OpenID_UntrustedReturnURL">Auth_OpenID_UntrustedReturnURL</abbr></a></dt>
+        <dd>An error that indicates that the given return_to is not under the
+given trust_root.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Auth-OpenID-Server.html"><abbr title="\Auth_OpenID_Server">Auth_OpenID_Server</abbr></a></dt>
+        <dd>I handle requests for an OpenID server.</dd>
+    
+    </dl>
+
+
+<h3 id="toc">
+    Table of Contents
+    <a href="#toc" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+                        <dt class="phpdocumentor-table-of-contents__entry -function -">
+    <a href="namespaces/default.html#function_Auth_OpenID_isError">Auth_OpenID_isError()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd></dd>
+
+    </dl>
+
+
+        
+
+            <section class="phpdocumentor-functions">
+        <h3 class="phpdocumentor-elements__header" id="functions">
+            Functions
+            <a href="files/auth-openid-server.html#functions" class="headerlink"><i class="fas fa-link"></i></a>
+        </h3>
+                    <article class="phpdocumentor-element -function - ">
+    <h4 class="phpdocumentor-element__name" id="function_Auth_OpenID_isError">
+        Auth_OpenID_isError()
+        <a href="namespaces/default.html#function_Auth_OpenID_isError" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="Auth/OpenID/Server.php"><a href="files/auth-openid-server.html"><abbr title="Auth/OpenID/Server.php">Server.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">140</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility"></span>
+                <span class="phpdocumentor-signature__name">Auth_OpenID_isError</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">object|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$obj</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$cls</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;Auth_OpenID_ServerError&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$obj</span>
+                : <span class="phpdocumentor-signature__argument__return-type">object|string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$cls</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">&#039;Auth_OpenID_ServerError&#039;</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"></section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">access</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>private</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+    
+</article>
+            </section>
+
+    </article>
+                <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
+    <section class="phpdocumentor-search-results__dialog">
+        <header class="phpdocumentor-search-results__header">
+            <h2 class="phpdocumentor-search-results__title">Search results</h2>
+            <button class="phpdocumentor-search-results__close"><i class="fas fa-times"></i></button>
+        </header>
+        <section class="phpdocumentor-search-results__body">
+            <ul class="phpdocumentor-search-results__entries"></ul>
+        </section>
+    </section>
+</section>
+            </div>
+        </div>
+        <a href="files/auth-openid-server.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <script>
+        cssVars({});
+    </script>
+</body>
+</html>
