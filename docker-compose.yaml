@@ -2,13 +2,11 @@ version: "3"
 
 services:
     serverapp:
-        depends_on:
-            - db
         build: ./serverapp
-        ports:
-            - 8000:8000
         volumes:
-            - ./serverapp:/app
+            - ./serverapp:/var/www/html
+        ports:
+            - '8000:80'
     layer:
         depends_on:
             - db
@@ -18,14 +16,11 @@ services:
         volumes:
             - ./layer:/app
     prm:
-        depends_on:
-            - db
         build: ./prm
-        ports:
-            - 8002:8002
-        restart: always
         volumes:
-            - ./prm:/app
+            - ./prm:/var/www/html
+        ports:
+            - '8002:80'
     db:
         image: mysql
         volumes:

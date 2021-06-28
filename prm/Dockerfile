@@ -1,20 +1,16 @@
-FROM php:7.3-fpm
+FROM php:7.3-apache
 
-RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl git nodejs npm
-RUN docker-php-ext-install pdo mbstring mysqli pdo_mysql
+RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl git nodejs npm libgmp-dev
+RUN docker-php-ext-install pdo mbstring mysqli pdo_mysql gmp
+RUN pear install MDB2
+
 RUN pecl install mcrypt-1.0.3
 RUN docker-php-ext-enable mcrypt
 
-RUN apt-get install -y curl
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY ./openidserver.conf /etc/apache2/sites-available
+RUN a2enmod rewrite
+RUN service apache2 restart
+WORKDIR /etc/apache2/sites-available
+RUN a2ensite openidserver.conf
 
-WORKDIR /app
-COPY . /app
-
-#laravel project dependencies
-RUN composer install
-#provisioning for laravel passport
-RUN npm install --global cross-env
-
-CMD php artisan serve --host=0.0.0.0 --port=8002
-EXPOSE 8002
+EXPOSE 80
