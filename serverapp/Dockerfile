@@ -1,16 +1,9 @@
-FROM php:7.3-apache
+FROM python:3
+WORKDIR /code
+RUN pip install Django mysqlclient mysql-connector-python cryptography django-oauth-toolkit django-cors-middleware
+COPY ./src /code/
 
-RUN apt-get update -y && apt-get install -y libmcrypt-dev openssl git nodejs npm libgmp-dev
-RUN docker-php-ext-install pdo mbstring mysqli pdo_mysql gmp
-RUN pear install MDB2
+COPY ./wait-for-it.sh /wait-for-it.sh
+RUN chmod +x /wait-for-it.sh
 
-RUN pecl install mcrypt-1.0.3
-RUN docker-php-ext-enable mcrypt
-
-COPY ./openidserver.conf /etc/apache2/sites-available
-RUN a2enmod rewrite
-RUN service apache2 restart
-WORKDIR /etc/apache2/sites-available
-RUN a2ensite openidserver.conf
-
-EXPOSE 80
+CMD /wait-for-it.sh db_serverapp:3306 && python POC/manage.py runserver 0.0.0.0:8000
