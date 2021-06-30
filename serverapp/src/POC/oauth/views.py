@@ -5,8 +5,11 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import authenticate
 from django.contrib.auth import logout as auth_logout
 
+from django.conf import settings
+
 import json
 import requests
+import os
 
 
 class login(View):
@@ -43,7 +46,7 @@ class auth_code(View):
         return super(auth_code, self).dispatch(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        response = requests.post('http://layer/token/')
+        response = requests.post('http://layer:8001/token/')
         return HttpResponse(response.content)
 
 class prm_resource(View):
@@ -51,5 +54,5 @@ class prm_resource(View):
         return super(prm_resource, self).dispatch(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        response = requests.get('http://layer/resource/')
+        response = requests.get('http://layer:8001/resource/')
         return HttpResponse(response.content)
