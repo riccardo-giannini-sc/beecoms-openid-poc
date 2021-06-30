@@ -11,10 +11,16 @@ if ($_POST['username'] && $_POST['password']) {
     if ($_POST['test-always-fail']) {
         $error = "Spiacente, non sei autenticato";
     } else {
-        $ch = curl_init("{$serverapp_base_url}/oauth/login");
+        $ch = curl_init("{$serverapp_base_url}/oauth/login/");
         curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, ['username' => $username, 'password' => $password]); 
-
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['username' => $username, 'password' => $password]));
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_VERBOSE, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER,
+            array(
+                'Content-Type:application/json',
+            )
+        );
         $response = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
@@ -30,7 +36,7 @@ if ($_POST['username'] && $_POST['password']) {
     }
 }
 if ($_POST['logout']) {
-    $ch = curl_init("{$serverapp_base_url}/oauth/logout");
+    $ch = curl_init("{$serverapp_base_url}/oauth/logout/");
     curl_setopt($ch, CURLOPT_POST, true);
 
     $response = curl_exec($ch);
