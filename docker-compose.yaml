@@ -1,6 +1,19 @@
 version: "3"
 
 services:
+    app-php:
+        build: ./app-php
+        depends_on:
+            - serverapp
+            - db_serverapp
+            - prm
+            - layer
+            - db_prm
+        volumes:
+            - ./app-php/src:/var/www/html/app-php
+        ports:
+            - 8080:80
+
     serverapp:
         build: ./serverapp
         depends_on:
