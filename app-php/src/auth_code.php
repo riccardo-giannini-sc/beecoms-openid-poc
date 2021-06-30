@@ -22,10 +22,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER,
 $response = curl_exec($ch);
 $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-exit("Response: $response, HTTP_CODE: $httpcode");
 ob_start();
 ?>
 
+<p><?= "Response: $response, HTTP_CODE: $httpcode" ?></p>
 <h3>Authorization Code inviato!</h3>
 
 <?
