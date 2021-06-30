@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('auth_code', 'POCController@auth_code');
+Route::get('resource', 'POCController@resource');
+Route::get('refresh_token', 'POCController@refresh_token');
