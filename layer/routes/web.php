@@ -17,4 +17,4 @@ Route::get('/', function () {
 
 Route::get('auth_code', 'POCController@auth_code');
 Route::get('resource', 'POCController@resource');
-Route::get('refresh_token', 'POCController@refresh_token');
+Route::get('token', 'POCController@refresh_token');

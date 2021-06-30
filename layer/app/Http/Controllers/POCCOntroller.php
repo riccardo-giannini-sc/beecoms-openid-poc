@@ -24,7 +24,7 @@ class POCCOntroller extends Controller
 
     public function auth_code(Request $request)
     {
-        $this->forward_request('POST', '', $request);
+        $this->forward_request('POST', 'token', $request);
     }
 
     public function resource(Request $request)

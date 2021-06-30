@@ -1,4 +1,10 @@
 <?
+if (!$_COOKIE['logged_in_app']) {
+    header('HTTP/1.0 403 Forbidden');
+    header('Refresh: 2; URL=http://127.0.0.1:8080/login_app.php');
+    echo "Accesso negato non sei loggato";
+    die();
+}
 
 require_once "config.php";
 
@@ -22,8 +28,11 @@ ob_start();
 
 ?>
 
+<h1>Login in PRM</h1>
+<p>Stai per essere reindirizzato a PRM per fare login su quella piattaforma e autorizzare il collegamento tra questi due account</p>
+
 <form action="<?= $prm_oauth_login_url ?? '' ?>">
-<button>Login in PRM</button>
+<button>Vai a PRM</button>
 </form>
 
 <?

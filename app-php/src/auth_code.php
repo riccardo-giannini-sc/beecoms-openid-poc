@@ -9,7 +9,7 @@ ob_start();
 
 ?>
 
-<form action="<?= $server_app_auth_code_url ?? '' ?>">
+<form action="<?= $server_app_auth_code_url ?? '' ?>" method="POST">
 <input type="text" readonly name="code" value="<?= $auth_code ?? '' ?>" placeholder="No Auth Code available">
 
 <button <?= $auth_code ? "" : "disabled" ?> >Submit</button>
