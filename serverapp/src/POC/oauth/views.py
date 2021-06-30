@@ -8,6 +8,8 @@ from django.contrib.auth import logout as auth_logout
 from django.conf import settings
 from django.core.exceptions import PermissionDenied
 
+from .models import AccessToken, RefreshToken, AppUser
+
 import json
 import requests
 import os
@@ -60,8 +62,9 @@ class auth_code(View):
 
     def post(self, request, *args, **kwargs):
 
-        code = request.POST.get( "code" )
-        redirect_uri = request.POST.get( "redirect_uri" )
+        body = json.loads( request.body )
+        code = body.get( "code" )
+        redirect_uri = body.get( "redirect_uri" )
 
         with open(os.path.join(settings.BASE_DIR, 'POC/secrets.json')) as client_info:
             data = json.loads(client_info.read())
@@ -83,7 +86,15 @@ class auth_code(View):
         #response = requests.post('http://layer:8001/token/', data = post_data, headers = post_headers)
         response = requests.post('http://prm:8000/o/token/', data = post_data, headers = post_headers)
 
-        return HttpResponse(response.content)
+        json_response = json.loads( response.content )
+        print( "REQUEST USER: -> ", request.user )
+        # app_user_obj = AppUser.objects.get(username = request.user.username )
+        # access_token_obj = AccessToken.objects.create(
+        #     user = app_user_obj,
+        #     token =
+        # )
+
+        return HttpResponse(str(json_response), status = response.status_code)
 
 class prm_resource(View):
     def dispatch(self, *args, **kwargs):
