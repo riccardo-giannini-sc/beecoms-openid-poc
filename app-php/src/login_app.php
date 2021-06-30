@@ -16,6 +16,7 @@ if ($_POST['username'] && $_POST['password']) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode(['username' => $username, 'password' => $password]));
         curl_setopt($ch, CURLOPT_HEADER, true);
         curl_setopt($ch, CURLOPT_VERBOSE, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER,
             array(
                 'Content-Type:application/json',
@@ -24,7 +25,7 @@ if ($_POST['username'] && $_POST['password']) {
         $response = curl_exec($ch);
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        var_dump("httpcode e response and oauth/login", $httpcode, $response);
+        // var_dump("httpcode e response and oauth/login", $httpcode, $response);
 
         if ($httpcode == 200) {
             setcookie("logged_in_app", true);
