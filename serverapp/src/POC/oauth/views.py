@@ -14,7 +14,7 @@ class login(View):
         return super(login, self).dispatch(*args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        body = loadRequestBody( request )
+        body = json.loads( request.body )
         username = body.get( "username" )
         password = body.get( "password" )
         user_obj = authenticate( request, username = username, password = password)
@@ -51,5 +51,5 @@ class prm_resource(View):
         return super(prm_resource, self).dispatch(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        response = requests.get('http://127.0.0.1:8001/')
+        response = requests.get('http://layer/resource/')
         return HttpResponse(response.content)
