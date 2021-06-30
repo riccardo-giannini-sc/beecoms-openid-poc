@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
-class POCCOntroller extends Controller
+class POCController extends Controller
 {
     private $receiver_url = "http://127.0.0.1:8002";
 
