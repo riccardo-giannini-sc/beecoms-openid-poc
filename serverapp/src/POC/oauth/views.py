@@ -87,7 +87,7 @@ class auth_code(View):
         response = requests.post('http://prm:8000/o/token/', data = post_data, headers = post_headers)
 
         json_response = json.loads( response.content )
-        print( "REQUEST USER: -> ", request.user )
+
         # app_user_obj = AppUser.objects.get(username = request.user.username )
         # access_token_obj = AccessToken.objects.create(
         #     user = app_user_obj,
