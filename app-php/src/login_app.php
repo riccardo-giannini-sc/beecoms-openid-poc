@@ -22,9 +22,9 @@ if ($_POST['username'] && $_POST['password']) {
             )
         );
         $response = curl_exec($ch);
-        $httpcode = curl_getinfo($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-        var_dump("httpcode e response and oauth/login", $httpcode, curl_error($ch));
+        var_dump("httpcode e response and oauth/login", $httpcode, $response);
 
         if ($httpcode == 200) {
             setcookie("logged_in_app", true);
