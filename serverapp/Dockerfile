@@ -1,6 +1,6 @@
 FROM python:3
 WORKDIR /code
-RUN pip install Django mysqlclient mysql-connector-python cryptography django-oauth-toolkit django-cors-middleware
+RUN pip install Django mysqlclient mysql-connector-python cryptography django-cors-middleware
 COPY ./src /code/
 
 COPY ./wait-for-it.sh /wait-for-it.sh

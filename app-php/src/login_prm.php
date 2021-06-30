@@ -13,16 +13,19 @@ require_once "config.php";
 function get_serverapp_client_id(string $url): string
 {
     $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     return curl_exec($ch);
 }
 
-$data = http_build_query([
+$data = [
     "response_type" => "code",
     "client_id" => get_serverapp_client_id($serverapp_client_id_endpoint),
     "redirect_uri" => $redirect_uri,
-]);
+];
 
-$prm_oauth_login_url = "{$prm_base_url}/o/authorize/?{$data}";
+// $prm_oauth_login_url = "{$prm_base_url}/o/authorize?{$data}";
+//
+// var_dump($prm_oauth_login_url);
 
 ob_start();
 
@@ -31,8 +34,15 @@ ob_start();
 <h1>Login in PRM</h1>
 <p>Stai per essere reindirizzato a PRM per fare login su quella piattaforma e autorizzare il collegamento tra questi due account</p>
 
-<form action="<?= $prm_oauth_login_url ?? '' ?>">
-<button>Vai a PRM</button>
+<form action="<?= "{$prm_base_url}/o/authorize" ?? '' ?>">
+  <?
+    foreach ($data as $key => $value) {
+        $key = htmlspecialchars($key);
+        $value = htmlspecialchars($value);
+        echo "<input type='hidden' name='$key' value='$value'/>";
+    }
+  ?>
+  <button>Vai a PRM</button>
 </form>
 
 <?
