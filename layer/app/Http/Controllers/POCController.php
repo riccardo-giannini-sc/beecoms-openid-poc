@@ -9,7 +9,7 @@ class POCController extends Controller
 {
     private $receiver_url = "http://prm:8000";
 
-    private function forward_request(string $method, string $endpoint, Request $request)
+    private function forward_request(string $method, string $endpoint, Request $request, array $additional_headers = [])
     {
         // $oldheaders = array($request->headers->all())[0];
         $headers = [];
@@ -25,7 +25,7 @@ class POCController extends Controller
 
         $client = new Client();
         $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
-                'headers' => $headers,
+                'headers' => array_merge($headers, $additional_headers),
                 'body' => $request->getContent(),
                 'allow_redirects' => ['strict' => true],
                 // 'debug' => true,
@@ -36,7 +36,11 @@ class POCController extends Controller
 
     public function auth_code(Request $request)
     {
-        $this->forward_request('POST', 'token', $request);
+        $additional_headers = [
+            'content-type' => "application/x-www-form-urlencoded",
+        'cache-control' => "no-cache"
+        ];
+        $this->forward_request('POST', 'token', $request, $additional_headers);
     }
 
     public function resource(Request $request)
