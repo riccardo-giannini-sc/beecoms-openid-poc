@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
 
 class POCController extends Controller
@@ -23,17 +24,21 @@ class POCController extends Controller
         //     $headers[ucwords($i)] = ucwords($h[0]);
         // }
         
-        $client = new Client();
-        $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
-                'headers' => array_merge($headers, $additional_headers),
-                'body' => $request->getContent(),
-                'allow_redirects' => ['strict' => true],
-                // 'debug' => true,
-        ]);
-
-        if ($response->getStatusCode() !== 200) {
-            return response()->json($response->getBody()->getContents(), $response->getStatusCode());
+        try {
+            $client = new Client();
+            $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
+                    'headers' => array_merge($headers, $additional_headers),
+                    'body' => $request->getContent(),
+                    'allow_redirects' => ['strict' => true],
+                    // 'debug' => true,
+            ]);
+        } catch (ClientException $ex) {
+            if ($ex->hasResponse()) {
+                $response = $ex->getResponse();
+                return response()->json($response->getBody()->getContents(), $response->getStatusCode());
+            }
         }
+
 
         return $response;
     }
