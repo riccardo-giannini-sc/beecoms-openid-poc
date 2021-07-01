@@ -22,7 +22,7 @@ class POCController extends Controller
         // foreach ($oldheaders as $i => $h) {
         //     $headers[ucwords($i)] = ucwords($h[0]);
         // }
-
+        
         $client = new Client();
         $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
                 'headers' => array_merge($headers, $additional_headers),
@@ -38,9 +38,9 @@ class POCController extends Controller
     {
         $additional_headers = [
             'content-type' => "application/x-www-form-urlencoded",
-        'cache-control' => "no-cache"
+            'cache-control' => "no-cache"
         ];
-        $this->forward_request('POST', 'token', $request, $additional_headers);
+        $this->forward_request('POST', 'o/token/', $request, $additional_headers);
     }
 
     public function resource(Request $request)
