@@ -33,6 +33,10 @@ class POCController extends Controller
                     'http_errors' => false,
                     // 'debug' => true,
             ]);
+
+            if ($response->getStatusCode() !== 200) {
+                return response()->json($response->getBody()->getContents(), $response->getStatusCode());
+            }
         // } catch (ClientException $ex) {
             
             // if ($ex->hasResponse()) {
