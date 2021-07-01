@@ -24,7 +24,7 @@ class POCController extends Controller
         // foreach ($oldheaders as $i => $h) {
         //     $headers[ucwords($i)] = ucwords($h[0]);
         // }
-        
+
         // try {
             $client = new Client();
             $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
@@ -34,14 +34,8 @@ class POCController extends Controller
                     'http_errors' => false,
                     // 'debug' => true,
             ]);
-
-            if ($response->getStatusCode() !== 200) {
-                abort(400, json_encode(['foo' => 'bar']));
-                return Response::json(['foo' => 'bar'], 403);
-                return response()->json($response->getBody()->getContents(), $response->getStatusCode());
-            }
         // } catch (ClientException $ex) {
-            
+
             // if ($ex->hasResponse()) {
                 // dd($ex);
                 // $response = $ex->getResponse();
@@ -58,7 +52,7 @@ class POCController extends Controller
             'content-type' => "application/x-www-form-urlencoded",
             'cache-control' => "no-cache"
         ];
-        $this->forward_request('POST', 'o/token/', $request, $additional_headers);
+        return $this->forward_request('POST', 'o/token/', $request, $additional_headers);
     }
 
     public function resource(Request $request)

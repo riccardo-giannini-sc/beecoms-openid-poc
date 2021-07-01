@@ -110,11 +110,13 @@ class auth_code(View):
         }
         post_headers = {
             'Cache-Control': 'no-cache',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
         }
 
-        #response = requests.post('http://layer:8001/token/', data = post_data, headers = post_headers)
-        response = requests.post('http://prm:8000/o/token/', data = post_data, headers = post_headers)
+        response = requests.post('http://layer:8001/auth_code/', data = post_data, headers = post_headers)
+        return HttpResponse(response.content, status = response.status_code)
+        # response = requests.post('http://prm:8000/o/token/', data = post_data, headers = post_headers)
 
         json_response = json.loads( response.content )
 
@@ -167,7 +169,6 @@ class prm_resource(View):
 
             headers = { 'Authorization': 'Bearer ' + access_token }
 
-            # response = requests.get('http://prm:8000/resource/', headers = headers)
             response = requests.get('http://layer:8001/resource/', headers = headers)
 
             if response.status_code == 403:
