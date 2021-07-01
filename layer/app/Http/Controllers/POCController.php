@@ -25,7 +25,7 @@ class POCController extends Controller
         // }
         
         // try {
-            $client = new Client([], ["request.options" => ["exceptions" => false]]);
+            $client = new Client();
             $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
                     'headers' => array_merge($headers, $additional_headers),
                     'body' => $request->getContent(),
