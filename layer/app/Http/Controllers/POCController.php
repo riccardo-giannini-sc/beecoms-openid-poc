@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class POCController extends Controller
 {
@@ -35,6 +36,7 @@ class POCController extends Controller
             ]);
 
             if ($response->getStatusCode() !== 200) {
+                return Response::json(['foo' => 'bar'], 403);
                 return response()->json($response->getBody()->getContents(), $response->getStatusCode());
             }
         // } catch (ClientException $ex) {
