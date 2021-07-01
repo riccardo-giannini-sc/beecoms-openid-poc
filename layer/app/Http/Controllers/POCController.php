@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class POCController extends Controller
 {
-    private $receiver_url = "http://prm:8002";
+    private $receiver_url = "http://prm:8000";
 
     private function forward_request(string $method, string $endpoint, Request $request)
     {
