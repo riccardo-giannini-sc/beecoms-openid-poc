@@ -15,7 +15,7 @@ class POCController extends Controller
         $headers = [];
 
         if ($request->bearerToken()) {
-            $headers['Authorization'] = $request->bearerToken();
+            $headers['Authorization'] = "Bearer "  . $request->bearerToken();
         }
 
 
