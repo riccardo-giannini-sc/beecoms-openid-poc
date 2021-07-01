@@ -12,6 +12,9 @@ class AccessToken(models.Model):
     updated = models.DateTimeField(auto_now=True)
     scope = models.TextField(blank=True)
 
+    def __str__(self):
+        return "Access Token " + str(self.id)
+
 class RefreshToken(models.Model):
     user = models.ForeignKey(AppUser, on_delete = models.CASCADE)
     token = models.BinaryField()
@@ -19,3 +22,7 @@ class RefreshToken(models.Model):
     revoked = models.DateTimeField(null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+
+
+    def __str__(self):
+        return "Refresh Token " + str(self.id)
