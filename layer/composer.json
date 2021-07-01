@@ -12,7 +12,9 @@
         "fideloper/proxy": "^4.4",
         "guzzlehttp/guzzle": "^7.3",
         "laravel/framework": "^6.20.26",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "symfony/psr-http-message-bridge": "^2.1",
+        "zendframework/zend-diactoros": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^1.16.15",

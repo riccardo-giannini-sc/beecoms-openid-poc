@@ -41,8 +41,8 @@ class POCController extends Controller
 
     public function resource(Request $request)
     {
-        return $this->forward_request('GET', 'oauth/prm_resource/', $request);
-        
+        return $this->forward_request('GET', 'resource/', $request);
+
     }
 
     public function refresh_token(Request $request)
