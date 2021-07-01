@@ -31,6 +31,10 @@ class POCController extends Controller
                 // 'debug' => true,
         ]);
 
+        if ($response->getStatusCode() !== 200) {
+            return response()->json($response->getBody()->getContents(), $response->getStatusCode());
+        }
+
         return $response;
     }
 
