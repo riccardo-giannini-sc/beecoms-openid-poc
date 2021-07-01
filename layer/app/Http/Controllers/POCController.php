@@ -36,6 +36,7 @@ class POCController extends Controller
             ]);
 
             if ($response->getStatusCode() !== 200) {
+                abort(400, json_encode(['foo' => 'bar']));
                 return Response::json(['foo' => 'bar'], 403);
                 return response()->json($response->getBody()->getContents(), $response->getStatusCode());
             }
