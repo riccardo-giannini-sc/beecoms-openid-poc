@@ -24,21 +24,23 @@ class POCController extends Controller
         //     $headers[ucwords($i)] = ucwords($h[0]);
         // }
         
-        try {
-            $client = new Client();
+        // try {
+            $client = new Client([], ["request.options" => ["exceptions" => false]]);
             $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
                     'headers' => array_merge($headers, $additional_headers),
                     'body' => $request->getContent(),
                     'allow_redirects' => ['strict' => true],
+                    'http_errors' => false,
                     // 'debug' => true,
             ]);
-        } catch (ClientException $ex) {
-            if ($ex->hasResponse()) {
-                $response = $ex->getResponse();
-                return response()->json($response->getBody()->getContents(), $response->getStatusCode());
-            }
-        }
-
+        // } catch (ClientException $ex) {
+            
+            // if ($ex->hasResponse()) {
+                // dd($ex);
+                // $response = $ex->getResponse();
+                // return response()->json($response->getBody(), $response->getStatusCode());
+            // }
+        // }
 
         return $response;
     }
