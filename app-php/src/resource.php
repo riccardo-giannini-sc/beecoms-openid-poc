@@ -6,9 +6,9 @@ ob_start();
 
 ?>
 
-<h1>Login in App</h1>
+<h1>Prendi risorsa dal PRM</h1>
 
-<form action="<?=$serverapp_base_url?>/prm_resource" method="GET">
+<form action="<?=$serverapp_base_url?>/oauth/prm_resource/" method="GET">
 <button>Prendi Risorsa</button>
 </form>
 

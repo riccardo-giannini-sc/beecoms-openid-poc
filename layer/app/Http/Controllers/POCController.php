@@ -7,17 +7,24 @@ use Illuminate\Http\Request;
 
 class POCController extends Controller
 {
-    private $receiver_url = "http://127.0.0.1:8002";
+    private $receiver_url = "http://prm:8002";
 
     private function forward_request(string $method, string $endpoint, Request $request)
     {
+        $oldheaders = array($request->headers->all())[0];
+        $headers = [];
+
+        foreach ($oldheaders as $i => $h) {
+            $headers[ucwords($i)] = ucwords($h[0]);
+        }
+
         $client = new Client();
-            $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
-                'headers' => $request->get_headers(),
+        $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
+                'headers' => $headers,
                 'body' => $request->getContent(),
                 'allow_redirects' => ['strict' => true],
                 // 'debug' => true,
-            ]);
+        ]);
 
         return $response;
     }
@@ -29,7 +36,7 @@ class POCController extends Controller
 
     public function resource(Request $request)
     {
-        return $this->forward_request('GET', '', $request);
+        return $this->forward_request('GET', 'oauth/prm_resource/', $request);
         
     }
 
