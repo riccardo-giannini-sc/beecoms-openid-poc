@@ -114,8 +114,6 @@ class auth_code(View):
         }
 
         response = requests.post('http://layer:8001/auth_code/', data = post_data, headers = post_headers)
-        return HttpResponse(response.content, status = response.status_code)
-        # response = requests.post('http://prm:8000/o/token/', data = post_data, headers = post_headers)
 
         json_response = json.loads( response.content )
 
