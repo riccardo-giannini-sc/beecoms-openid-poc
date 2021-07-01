@@ -13,35 +13,20 @@ class POCController extends Controller
 
     private function forward_request(string $method, string $endpoint, Request $request, array $additional_headers = [])
     {
-        // $oldheaders = array($request->headers->all())[0];
         $headers = [];
 
         if ($request->bearerToken()) {
             $headers['Authorization'] = "Bearer "  . $request->bearerToken();
         }
 
-
-        // foreach ($oldheaders as $i => $h) {
-        //     $headers[ucwords($i)] = ucwords($h[0]);
-        // }
-
-        // try {
-            $client = new Client();
-            $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
-                    'headers' => array_merge($headers, $additional_headers),
-                    'body' => $request->getContent(),
-                    'allow_redirects' => ['strict' => true],
-                    'http_errors' => false,
-                    // 'debug' => true,
-            ]);
-        // } catch (ClientException $ex) {
-
-            // if ($ex->hasResponse()) {
-                // dd($ex);
-                // $response = $ex->getResponse();
-                // return response()->json($response->getBody(), $response->getStatusCode());
-            // }
-        // }
+        $client = new Client();
+        $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
+                'headers' => array_merge($headers, $additional_headers),
+                'body' => $request->getContent(),
+                'allow_redirects' => ['strict' => true],
+                'http_errors' => false,
+                // 'debug' => true,
+        ]);
 
         return $response;
     }
