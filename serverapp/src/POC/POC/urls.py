@@ -5,5 +5,5 @@ from oauth.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('oauth/', include('oauth.urls'))
+    path('oauth/', include('oauth.urls')),
 ]

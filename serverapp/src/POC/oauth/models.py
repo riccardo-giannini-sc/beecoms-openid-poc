@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class AppUser(User):
-    salt = models.CharField(max_length = 32, null = True, blank = True, verbose_name = "Salt")
+    salt = models.BinaryField(max_length = 32, null = True, blank = True, verbose_name = "Salt")
 
 class AccessToken(models.Model):
     user = models.ForeignKey(AppUser, on_delete = models.CASCADE)
-    token = models.CharField(max_length=255)
+    token = models.BinaryField()
     expires = models.DateTimeField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -14,7 +14,7 @@ class AccessToken(models.Model):
 
 class RefreshToken(models.Model):
     user = models.ForeignKey(AppUser, on_delete = models.CASCADE)
-    token = models.CharField(max_length=255)
+    token = models.BinaryField()
     access_token = models.ForeignKey(AccessToken, on_delete = models.SET_NULL, blank = True, null = True)
     revoked = models.DateTimeField(null=True)
     created = models.DateTimeField(auto_now_add=True)

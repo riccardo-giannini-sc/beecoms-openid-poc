@@ -1,4 +1,5 @@
 from django.views.generic import View
+from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 
 from django.contrib.auth import login as auth_login
@@ -13,6 +14,18 @@ from .models import AccessToken, RefreshToken, AppUser
 import json
 import requests
 import os
+import datetime
+import secrets
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from cryptography.fernet import Fernet
+
+from base64 import b64encode, b64decode
+
+
+
+class homepage(TemplateView):
+    template_name = 'login.html'
 
 
 class login(View):
@@ -24,8 +37,24 @@ class login(View):
         username = body.get( "username" )
         password = body.get( "password" )
         user_obj = authenticate( request, username = username, password = password)
+
         if user_obj != None and user_obj.is_authenticated:
             auth_login(request, user_obj)
+            app_user_obj = AppUser.objects.get(username = username)
+            if app_user_obj.salt == None:
+                salt = secrets.token_bytes(32)
+                app_user_obj.salt = salt
+                app_user_obj.save()
+
+            privkey = PBKDF2HMAC(
+                algorithm = hashes.SHA256,
+                length = 32,
+                salt = app_user_obj.salt,
+                iterations = 32000
+            ).derive(password.encode())
+
+            request.session['privkey'] = b64encode(privkey).decode('utf-8')
+
             return HttpResponse("[SUCCESS] - Logged in")
         return HttpResponse("[ERROR] - Credentials", status = 401)
 
@@ -45,6 +74,7 @@ class client_id(View):
         with open(os.path.join(settings.BASE_DIR, 'POC/secrets.json')) as client_info:
             data = json.loads(client_info.read())
             client_id = data["client_id"]
+        print(request.user)
         return HttpResponse(client_id)
 
 
@@ -88,11 +118,33 @@ class auth_code(View):
 
         json_response = json.loads( response.content )
 
-        # app_user_obj = AppUser.objects.get(username = request.user.username )
-        # access_token_obj = AccessToken.objects.create(
-        #     user = app_user_obj,
-        #     token =
-        # )
+        if response.status_code == 200:
+            access_token = json_response['access_token']
+            refresh_token = json_response['refresh_token']
+
+
+            # ENCRYPTING TOKENS
+
+            app_user_obj = AppUser.objects.get(username = request.user.username )
+            if 'privkey' in request.session:
+                current_privkey = request.session['privkey'].encode()
+                f = Fernet(current_privkey)
+                protected_access_token = f.encrypt(access_token.encode())
+                protected_refresh_token = f.encrypt(refresh_token.encode())
+                access_token_obj = AccessToken.objects.create(
+                     user = app_user_obj,
+                     token = protected_access_token,
+                     expires = datetime.datetime.now() + datetime.timedelta(0, json_response['expires_in']),
+                     scope = json_response['scope']
+                )
+                refresh_token_obj = RefreshToken.objects.create(
+                     user = app_user_obj,
+                     token = protected_refresh_token,
+                     access_token = access_token_obj,
+                )
+            else:
+                return HttpResponse("[ERROR] - No private key")
+
 
         return HttpResponse(str(json_response), status = response.status_code)
 
@@ -101,8 +153,25 @@ class prm_resource(View):
         return super(prm_resource, self).dispatch(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        #response = requests.get('http://layer:8001/resource/')
-        response = requests.get('http://prm:8000/resource/')
-        if response.status_code == 403:
-            raise PermissionDenied()
+
+
+        # DECRYPTING TOKENS
+        current_privkey = None
+        if 'privkey' in request.session:
+
+            app_user_obj = AppUser.objects.get(username = request.user.username )
+            current_privkey = request.session['privkey'].encode()
+            f = Fernet(current_privkey)
+            access_token_obj = AccessToken.objects.filter(user = app_user_obj).last()
+            access_token = f.decrypt(access_token_obj.token).decode('utf-8')
+
+            headers = { 'Authorization': 'Bearer ' + access_token }
+
+            # response = requests.get('http://prm:8000/resource/', headers = headers)
+            response = requests.get('http://layer:8001/resource/', headers = headers)
+
+            if response.status_code == 403:
+                raise PermissionDenied()
+        else:
+            return HttpResponse("[ERROR] - No private key")
         return HttpResponse(response.content, status = response.status_code)
