@@ -111,7 +111,6 @@ class auth_code(View):
         post_headers = {
             'Cache-Control': 'no-cache',
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Accept': 'application/json'
         }
 
         response = requests.post('http://layer:8001/auth_code/', data = post_data, headers = post_headers)
