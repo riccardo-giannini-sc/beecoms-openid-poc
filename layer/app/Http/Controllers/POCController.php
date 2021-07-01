@@ -11,12 +11,17 @@ class POCController extends Controller
 
     private function forward_request(string $method, string $endpoint, Request $request)
     {
-        $oldheaders = array($request->headers->all())[0];
+        // $oldheaders = array($request->headers->all())[0];
         $headers = [];
 
-        foreach ($oldheaders as $i => $h) {
-            $headers[ucwords($i)] = ucwords($h[0]);
+        if ($request->bearerToken()) {
+            $headers['Authorization'] = $request->bearerToken();
         }
+
+
+        // foreach ($oldheaders as $i => $h) {
+        //     $headers[ucwords($i)] = ucwords($h[0]);
+        // }
 
         $client = new Client();
         $response = $client->request($method, $this->receiver_url . '/' . $endpoint, [
@@ -41,6 +46,11 @@ class POCController extends Controller
     }
 
     public function refresh_token(Request $request)
+    {
+        return $this->forward_request('POST', '', $request);
+    }
+
+    public function revoke_token(Request $request)
     {
         return $this->forward_request('POST', '', $request);
     }
