@@ -20,8 +20,6 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.fernet import Fernet
 
-# from django.views.decorators.csrf import csrf_exempt
-
 from base64 import b64encode, b64decode
 
 class session(View):
@@ -34,9 +32,6 @@ class session(View):
         else:
             return HttpResponse("User not logged in", status = 401)
 
-#this is just for testing purposes, remove from production. the app
-#should authenticate using its own api methods and keep csrf when needed
-# @csrf_exempt
 class login(View):
     def dispatch(self, *args, **kwargs):
         return super(login, self).dispatch(*args, **kwargs)
