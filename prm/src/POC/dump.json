@@ -517,46 +517,6 @@
 },
 {
  "model": "contenttypes.contenttype",
- "pk": 7,
- "fields": {
-  "app_label": "oauth2_provider",
-  "model": "application"
- }
-},
-{
- "model": "contenttypes.contenttype",
- "pk": 8,
- "fields": {
-  "app_label": "oauth2_provider",
-  "model": "accesstoken"
- }
-},
-{
- "model": "contenttypes.contenttype",
- "pk": 9,
- "fields": {
-  "app_label": "oauth2_provider",
-  "model": "grant"
- }
-},
-{
- "model": "contenttypes.contenttype",
- "pk": 10,
- "fields": {
-  "app_label": "oauth2_provider",
-  "model": "refreshtoken"
- }
-},
-{
- "model": "contenttypes.contenttype",
- "pk": 11,
- "fields": {
-  "app_label": "oauth2_provider",
-  "model": "idtoken"
- }
-},
-{
- "model": "contenttypes.contenttype",
  "pk": 12,
  "fields": {
   "app_label": "corsheaders",
