@@ -7,18 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="{% static 'app/app.css' %}" />
-    <title>Title</title>
+    <title>Beecoms App Spoof</title>
 </head>
 
 <body>
 
-    <div id="content-wrapper">
-        <div id="login">
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="passowrd" placeholder="username">
-            <button>Login in ServerApp</button>
-        </div>
-    </div>
+  <main id="main-holder">
+    <h1 id="login-header">Login in ServerApp</h1>
+
+    <form id="login-form" class="form-container">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit" class="submit-button">
+      <input type="button" id="logout-button" class="submit-button" value="Logout">
+      <input type="button" id="login-prm-button" class="submit-button" value="Accedi a PRM">
+      <input type="button" id="access-resource-button" class="submit-button" value="Accedi a risorsa">
+    </form>
+
+  </main>
 
     <script src="{% static 'app/app.js' %}"></script>
 </body>

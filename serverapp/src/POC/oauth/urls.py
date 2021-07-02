@@ -7,5 +7,4 @@ urlpatterns = [
     path('client_id/', client_id.as_view()),
     path('authcode/', auth_code.as_view()),
     path('prm_resource/', prm_resource.as_view()),
-    path('', homepage.as_view(), name = 'home')
 ]

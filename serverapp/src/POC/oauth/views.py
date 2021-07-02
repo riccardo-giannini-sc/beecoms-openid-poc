@@ -24,11 +24,6 @@ from cryptography.fernet import Fernet
 
 from base64 import b64encode, b64decode
 
-
-
-class homepage(TemplateView):
-    template_name = 'login.html'
-
 #this is just for testing purposes, remove from production. the app
 #should authenticate using its own api methods and keep csrf when needed
 # @csrf_exempt
@@ -173,7 +168,7 @@ class prm_resource(View):
             response = requests.get('http://layer:8001/resource/', headers = headers)
 
             if response.status_code == 403:
-                raise PermissionDenied()
+                return HttpResponse("[ERROR] - PermissionDenied", status = 403)
         else:
             return HttpResponse("[ERROR] - No private key")
         return HttpResponse(response.content, status = response.status_code)
