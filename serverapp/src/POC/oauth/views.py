@@ -10,6 +10,7 @@ from django.conf import settings
 from django.core.exceptions import PermissionDenied
 
 from .models import AccessToken, RefreshToken, AppUser
+from .utils import *
 
 import json
 import requests
@@ -78,7 +79,6 @@ class client_id(View):
         with open(os.path.join(settings.BASE_DIR, 'POC/secrets.json')) as client_info:
             data = json.loads(client_info.read())
             client_id = data["client_id"]
-        print(request.user)
         return HttpResponse(client_id)
 
 
@@ -131,20 +131,8 @@ class auth_code(View):
             app_user_obj = AppUser.objects.get(username = request.user.username )
             if 'privkey' in request.session:
                 current_privkey = request.session['privkey'].encode()
-                f = Fernet(current_privkey)
-                protected_access_token = f.encrypt(access_token.encode())
-                protected_refresh_token = f.encrypt(refresh_token.encode())
-                access_token_obj = AccessToken.objects.create(
-                     user = app_user_obj,
-                     token = protected_access_token,
-                     expires = datetime.datetime.now() + datetime.timedelta(0, json_response['expires_in']),
-                     scope = json_response['scope']
-                )
-                refresh_token_obj = RefreshToken.objects.create(
-                     user = app_user_obj,
-                     token = protected_refresh_token,
-                     access_token = access_token_obj,
-                )
+                access_token_obj = store_access_token(access_token, app_user_obj, json_response['expires_in'], json_response['scope'], current_privkey)
+                refresh_token_obj = store_refresh_token(refresh_token, app_user_obj, access_token_obj, current_privkey)
             else:
                 return HttpResponse("[ERROR] - No private key", status = 401)
 
@@ -172,8 +160,42 @@ class prm_resource(View):
 
             response = requests.get('http://layer:8001/resource/', headers = headers)
 
-            if response.status_code == 403:
-                return HttpResponse("[ERROR] - PermissionDenied", status = 403)
+            if response.status_code == 403 and access_token_obj != None:
+                # REFRESHING TOKEN
+                # TODO: in prm separate 401 (token expired) / 403 (no token/token invalid)
+                print("REFRESHING TOKEN")
+                with open(os.path.join(settings.BASE_DIR, 'POC/secrets.json')) as client_info:
+                    data = json.loads(client_info.read())
+                    client_id = data["client_id"]
+                    client_secret = data["client_secret"]
+
+                refresh_token_obj = RefreshToken.objects.filter(user = app_user_obj).last()
+                refresh_token = f.decrypt(refresh_token_obj.token).decode('utf-8')
+
+                post_data = {
+                    'grant_type': 'refresh_token',
+                    'client_id': client_id,
+                    'client_secret': client_secret,
+                    'refresh_token': refresh_token
+                }
+                post_headers = {
+                    'Cache-Control': 'no-cache',
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+
+                response = requests.post('http://layer:8001/auth_code/', data = post_data, headers = post_headers)
+                json_response = json.loads( response.content )
+
+                if response.status_code == 200:
+                    access_token = json_response['access_token']
+                    refresh_token = json_response['refresh_token']
+                    access_token_obj = store_access_token(access_token, app_user_obj, json_response['expires_in'], json_response['scope'], current_privkey)
+                    refresh_token_obj = store_refresh_token(refresh_token, app_user_obj, access_token_obj, current_privkey)
+                    headers = { 'Authorization': 'Bearer ' + access_token }
+
+                    response = requests.get('http://layer:8001/resource/', headers = headers)
+                else:
+                    return HttpResponse(response.content, status = response.status_code)
         else:
             return HttpResponse("[ERROR] - No private key")
         return HttpResponse(response.content, status = response.status_code)
