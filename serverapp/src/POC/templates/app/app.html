@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'app/app.css' %}" />
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div id="content-wrapper">
+        <div id="login">
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="passowrd" placeholder="username">
+            <button>Login in ServerApp</button>
+        </div>
+    </div>
+
+    <script src="{% static 'app/app.js' %}"></script>
+</body>
+
+</html>
