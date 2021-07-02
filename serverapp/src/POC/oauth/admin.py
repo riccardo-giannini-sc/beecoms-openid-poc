@@ -18,4 +18,4 @@ class RefreshTokenAdmin(admin.ModelAdmin):
     readonly_fields = ('token', )
 
     def access_token_value(self, obj):
-        return obj.access_token.token
+        return obj.access_token.token if obj.access_token else None
