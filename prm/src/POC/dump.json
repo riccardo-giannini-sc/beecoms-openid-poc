@@ -516,14 +516,6 @@
  }
 },
 {
- "model": "contenttypes.contenttype",
- "pk": 12,
- "fields": {
-  "app_label": "corsheaders",
-  "model": "corsmodel"
- }
-},
-{
  "model": "oauth2_provider.application",
  "pk": 1,
  "fields": {
