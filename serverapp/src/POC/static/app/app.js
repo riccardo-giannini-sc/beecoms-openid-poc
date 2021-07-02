@@ -1,5 +1,6 @@
 var baseUrl = "http://127.0.0.1:8000/oauth/"
-
+var prmUrl = "http://127.0.0.1:8002/o/authorize"
+var redirect_uri = 'http://127.0.0.1:8000';
 
 var logged_in = false;
 const loginForm = document.getElementById("login-form");
@@ -30,7 +31,44 @@ function adjustVisibility(flag) {
 }
 
 document.addEventListener("DOMContentLoaded", (e) => {
-  adjustVisibility(logged_in);
+  fetch(baseUrl + 'session/')
+  .then(response => {
+    if (response.ok) {
+      logged_in = true;
+      adjustVisibility(logged_in);
+      let urlParams = new URLSearchParams(window.location.search);
+      let code = urlParams.get('code');
+      if (code) {
+        console.log("CODE ->", code);
+        let data = {
+          "code": code,
+          "redirect_uri": redirect_uri
+        }
+        fetch(baseUrl + 'authcode/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => {
+          let res_ok = false;
+          if (response.ok) {
+            res_ok = true;
+          }
+          return response.text();
+        })
+        .then(data => alert(data))
+        .catch(error => console.log(error))
+
+      }
+    }
+    else {
+      logged_in = false;
+      adjustVisibility(logged_in);
+    }
+  });
+
 });
 
 loginButton.addEventListener("click", (e) => {
@@ -65,6 +103,7 @@ loginButton.addEventListener("click", (e) => {
 
 });
 
+
 logoutButton.addEventListener("click", (e) => {
   e.preventDefault();
   fetch(baseUrl + 'logout/', {
@@ -86,15 +125,32 @@ logoutButton.addEventListener("click", (e) => {
   });
 });
 
+
+
 loginPrmButton.addEventListener("click", (e) => {
   e.preventDefault();
+  fetch(baseUrl + 'client_id/')
+  .then(response => response.text())
+  .then((data) => {
+    let client_id = data;
+    console.log(data);
+    // window.open(prmUrl + '?response_type=code' +
+    //                                 '&client_id=' + client_id +
+    //                                 '&redirect_uri=' + redirect_uri)
+    window.location.href = prmUrl + '?response_type=code' +
+                                    '&client_id=' + client_id +
+                                    '&redirect_uri=' + redirect_uri
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 });
+
+
 
 accessResourceButton.addEventListener("click", (e) => {
   e.preventDefault();
-  fetch(baseUrl + 'prm_resource/', {
-    method: 'GET'
-  })
+  fetch(baseUrl + 'prm_resource/')
   .then(response => response.text())
   .then((data) => {
     alert(data);

@@ -29,6 +29,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+SESSION_COOKIE_SECURE = False
+SESSION_COOKIE_NAME = 'sessionid_serverapp'
+
 # Application definition
 
 INSTALLED_APPS = [

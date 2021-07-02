@@ -24,6 +24,16 @@ from cryptography.fernet import Fernet
 
 from base64 import b64encode, b64decode
 
+class session(View):
+    def dispatch(self, *args, **kwargs):
+        return super(session, self).dispatch(*args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return HttpResponse("User is logged in", status = 200)
+        else:
+            return HttpResponse("User not logged in", status = 401)
+
 #this is just for testing purposes, remove from production. the app
 #should authenticate using its own api methods and keep csrf when needed
 # @csrf_exempt
@@ -141,7 +151,7 @@ class auth_code(View):
                      access_token = access_token_obj,
                 )
             else:
-                return HttpResponse("[ERROR] - No private key")
+                return HttpResponse("[ERROR] - No private key", status = 401)
 
 
         return HttpResponse(str(json_response), status = response.status_code)
