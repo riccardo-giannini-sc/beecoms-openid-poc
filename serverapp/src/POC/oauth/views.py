@@ -144,58 +144,46 @@ class prm_resource(View):
         return super(prm_resource, self).dispatch(*args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-
-
-        # DECRYPTING TOKENS
+        # DECRYPTING TOKEN
         current_privkey = None
         if 'privkey' in request.session:
-
             app_user_obj = AppUser.objects.get(username = request.user.username )
             current_privkey = request.session['privkey'].encode()
             f = Fernet(current_privkey)
             access_token_obj = AccessToken.objects.filter(user = app_user_obj).last()
-            access_token = f.decrypt(access_token_obj.token).decode('utf-8')
 
-            headers = { 'Authorization': 'Bearer ' + access_token }
+            if access_token_obj != None:
+                access_token = f.decrypt(access_token_obj.token).decode('utf-8')
 
-            response = requests.get('http://layer:8001/resource/', headers = headers)
+                headers = { 'Authorization': 'Bearer ' + access_token }
 
-            if response.status_code == 403 and access_token_obj != None:
-                # REFRESHING TOKEN
-                # TODO: in prm separate 401 (token expired) / 403 (no token/token invalid)
-                print("REFRESHING TOKEN")
-                with open(os.path.join(settings.BASE_DIR, 'POC/secrets.json')) as client_info:
-                    data = json.loads(client_info.read())
-                    client_id = data["client_id"]
-                    client_secret = data["client_secret"]
+                first_response = requests.get('http://layer:8001/resource/', headers = headers)
 
-                refresh_token_obj = RefreshToken.objects.filter(user = app_user_obj).last()
-                refresh_token = f.decrypt(refresh_token_obj.token).decode('utf-8')
+                # TOKEN EXPIRED
+                if first_response.status_code == 401 and json.loads(first_response.content).get('error', '') == 'The access token has expired.':
+                    # REFRESHING TOKEN
+                    print(first_response.content)
+                    post_data, post_headers = build_refresh_token_request(app_user_obj, f)
+                    second_response = requests.post('http://layer:8001/auth_code/', data = post_data, headers = post_headers)
 
-                post_data = {
-                    'grant_type': 'refresh_token',
-                    'client_id': client_id,
-                    'client_secret': client_secret,
-                    'refresh_token': refresh_token
-                }
-                post_headers = {
-                    'Cache-Control': 'no-cache',
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                }
+                    if second_response.status_code == 200:
+                        json_response = json.loads( second_response.content )
+                        access_token = json_response['access_token']
+                        refresh_token = json_response['refresh_token']
+                        access_token_obj = store_access_token(access_token, app_user_obj, json_response['expires_in'], json_response['scope'], current_privkey)
+                        refresh_token_obj = store_refresh_token(refresh_token, app_user_obj, access_token_obj, current_privkey)
+                        headers = { 'Authorization': 'Bearer ' + access_token }
 
-                response = requests.post('http://layer:8001/auth_code/', data = post_data, headers = post_headers)
-                json_response = json.loads( response.content )
+                        third_response = requests.get('http://layer:8001/resource/', headers = headers)
+                        return HttpResponse(third_response.content, status = third_response.status_code)
+                    else:
+                        return HttpResponse(second_response.content, status = second_response.status_code)
 
-                if response.status_code == 200:
-                    access_token = json_response['access_token']
-                    refresh_token = json_response['refresh_token']
-                    access_token_obj = store_access_token(access_token, app_user_obj, json_response['expires_in'], json_response['scope'], current_privkey)
-                    refresh_token_obj = store_refresh_token(refresh_token, app_user_obj, access_token_obj, current_privkey)
-                    headers = { 'Authorization': 'Bearer ' + access_token }
-
-                    response = requests.get('http://layer:8001/resource/', headers = headers)
                 else:
-                    return HttpResponse(response.content, status = response.status_code)
+                    return HttpResponse(first_response.content, status = first_response.status_code)
+
+            else:
+                return HttpResponse("[ERROR] - No token found", status = 401)
+
         else:
-            return HttpResponse("[ERROR] - No private key")
-        return HttpResponse(response.content, status = response.status_code)
+            return HttpResponse("[ERROR] - No private key. Are you logged in?", status = 401)
